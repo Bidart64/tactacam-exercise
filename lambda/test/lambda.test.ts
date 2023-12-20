@@ -53,7 +53,7 @@ describe('Lambda handler', () => {
         TableName: 'test-table',
         Item: { id: 1, name: 'Test' },
       },
-      expect.any(Function)
+      expect.any(Function),
     );
 
     expect(result).toEqual({ message: 'ok' });

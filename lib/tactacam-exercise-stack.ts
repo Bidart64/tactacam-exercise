@@ -12,13 +12,13 @@ export class TactacamExerciseStack extends cdk.Stack {
     });
 
     const table = new dynamodb.Table(this, 'MyTable', {
-      partitionKey: { name: 'id', type: dynamodb.AttributeType.STRING }
+      partitionKey: { name: 'id', type: dynamodb.AttributeType.STRING },
     });
 
     const lambdaFunction = new lambda.Function(this, 'MyFunction', {
       runtime: lambda.Runtime.NODEJS_16_X,
       code: lambda.Code.fromAsset('lambda'),
-      handler: 'index.handler'
+      handler: 'index.handler',
     });
 
     bucket.grantRead(lambdaFunction);
